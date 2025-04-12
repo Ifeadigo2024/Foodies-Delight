@@ -1,0 +1,199 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #fffaf0;
+  color: #333;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background-color: #ff4500;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Section Titles */
+h2 {
+  text-align: center;
+  margin: 30px 0 20px;
+  color: #ff4500;
+}
+
+/* Food Menu */
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.food-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.food-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}
+.food-item h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.food-item button {
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.food-item button:hover {
+  background-color: #e03d00;
+}
+
+.food-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(0);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.food-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Image Zoom on Hover */
+.food-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  border-radius: 10px;
+}
+
+.food-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Order Form */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  margin-top: 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #218838;
+}
+
+.order {
+  display: flex;
+  justify-content: center;
+}
+
+.order a {
+  background-color: #e03d00;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #d88364;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+  background-color: #f0f0f0;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #menu {
+    flex-direction: column;
+    align-items: center;
+  }
+}

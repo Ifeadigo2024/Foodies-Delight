@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foodies Delight</title>
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- AOS Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  });
+</script>
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Foodies Delight</h1>
+    <nav>
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#order">Order Now</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Food Menu -->
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="food-menu">
+    <div class="food-item" data-aos="fade-up" data-aos-delay="100">
+      <img src="./assets/jollof-rice.jpg">
+      <h3>Jollof Rice</h3>
+      <p>Spicy and flavorful, served with chicken.</p>
+      <p><strong>₦2000</strong></p>
+      <button class="order-btn" data-food="Jollof Rice">Order</button>
+    </div>
+    <div class="food-item" data-aos="fade-up" data-aos-delay="100">
+      <img src="./assets/amala.jpg">
+      <h3>Amala & Ewedu</h3>
+      <p>Rich and smooth yam flour served with ewedu and spicy stew.</p>
+      <p><strong>₦2000</strong></p>
+      <a><button class="order-btn" data-food="Amala & Ewedu">Order</button></a>
+    </div>
+    <div class="food-item" data-aos="fade-up" data-aos-delay="100">
+      <img src="./assets/spicy-spaghetti.jpg">
+      <h3>Spicy Spaghetti</h3>
+      <p>Well-seasoned and stir-fried with vegetables and peppery sauce.</p>
+      <p><strong>₦1800</strong></p>
+      <button class="order-btn" data-food="spicy-spaghetti">Order</button>
+    </div>
+    <div class="food-item" data-aos="fade-up" data-aos-delay="100">
+      <img src="./assets/indomie.jpg">
+      <h3>Indomie</h3>
+      <p>Classic instant noodles, stir-fried with veggies and a kick of spice.</p>
+      <p><strong>₦1500</strong></p>
+      <button class="order-btn" data-food="Indomie">Order</button>
+    </div>
+    <div class="food-item" data-aos="fade-up" data-aos-delay="100">
+      <img src="./assets/Roasted Chicken.jpg">
+      <h3>Roasted Chicken</h3>
+      <p>Tender, juicy, and perfectly roasted with local spices.</p>
+      <p><strong>₦2500</strong></p>
+      <button class="order-btn" data-food="Roasted Chicken">Order</button>
+    </div>
+    <div class="food-item" data-aos="fade-up" data-aos-delay="100">
+      <img src="./assets/yam.jpg">
+      <h3>Yam and egg source</h3>
+      <p>Fried yam served with delicious egg and tomato sauce.</p>
+      <p><strong>₦1700</strong></p>
+      <button class="order-btn" data-food="Yam and egg source">Order</button>
+    </div>
+    <div class="food-item" data-aos="fade-up" data-aos-delay="100">
+      <img src="./assets/abacha.jpeg">
+      <h3>Abacha</h3>
+      <p>African salad with ugba, fish, and peppery dressing.</p>
+      <p><strong>₦1600</strong></p>
+      <button class="order-btn" data-food="Abacha">Order</button>
+    </div>
+    </div>
+    <!-- Add more food items as needed -->
+  </section>
+
+  <form id="orderForm">
+    <label for="food">Select Food:</label>
+    <select id="food" name="food">
+      <option value="Jollof Rice">Jollof Rice</option>
+      <option value="Amala & Ewedu">Amala & Ewedu</option>
+      <option value="spicy-spaghetti">Spicy Spaghetti</option>
+      <option value="Indomie">Indomie</option>
+      <option value="Roasted Chicken">Roasted Chicken</option>
+      <option value="Yam and egg source">Yam and egg source</option>
+      <option value="Abacha">Abacha</option>
+      <!-- Add more options -->
+    </select>
+  
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="20" required />
+  
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required />
+  
+    <label for="address">Delivery Address:</label>
+    <textarea id="address" name="address" required></textarea>
+  
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required />
+  
+    <button type="submit">Submit Order</button>
+  </form>
+  
+  <script>
+    document.getElementById('orderForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const food = document.getElementById('food').value;
+      const quantity = document.getElementById('quantity').value;
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const phone = document.getElementById('phone').value;
+  
+      const message = `🍽️ *New Food Order!*\n\n📦 *Food:* ${food}\n🔢 *Quantity:* ${quantity}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n🏠 *Address:* ${address}`;
+  
+      const whatsappNumber = "2349073018211"; // Replace with your WhatsApp number
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  
+      window.open(url, '_blank');
+    });
+  </script>
+
+  <!--scroll-->
+  <script>
+    const orderButtons = document.querySelectorAll('.order-btn');
+    const foodSelect = document.getElementById('food');
+    const orderForm = document.getElementById('orderForm');
+  
+    orderButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selectedFood = button.getAttribute('data-food');
+  
+        // Set the selected food in the dropdown
+        foodSelect.value = selectedFood;
+  
+        // Scroll to the form
+        orderForm.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+  
+  <!-- Firebase SDK --
+  <script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      
+      let count = localStorage.getItem("orderCount") || 0;
+      count = parseInt(count) + 1;
+      localStorage.setItem("orderCount", count);
+      
+      alert("Order submitted!");
+      form.reset();
+    });
+  </script>
+  <!-- Footer -->
+  <footer id="contact">
+    <p>Contact us: 09073018211 | foodies@delight.ng</p>
+    <p>&copy; 2025 Foodies Delight</p>
+  </footer>
+</body>
+</html>
+
+
+   <!-- Firebase SDK --
+  <div class="order">
+    <a class="order" href="./orders.html">Number of Orders</a>
+  </div>  
+ 
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwPBJNOUo4xn519tXgZ3LtrMu4QqeEU5DbUoszwEovmcvUOPN2UovQEVmP1eKPmDo2Cog/exec";
+    const form = document.getElementById("orderForm");
+  
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+  
+      const orderData = {
+        name: document.getElementById("name").value,
+        address: document.getElementById("address").value,
+        food: document.getElementById("food").value
+      };
+  
+      fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(orderData),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert("Order submitted successfully!");
+        form.reset();
+      })
+      .catch(error => {
+        alert("Error sending order.");
+        console.error("Error!", error.message);
+      });
+    });
+  </script>
+  
+  
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<script>
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBxLinNzyb00qQh8xOio2P_P_zi9YEmpeo",
+  authDomain: "foodies-delight-8993d.firebaseapp.com",
+  projectId: "foodies-delight-8993d",
+  storageBucket: "foodies-delight-8993d.firebasestorage.app",
+  messagingSenderId: "1035498407603",
+  appId: "1:1035498407603:web:51ea668450d3e45afc12c6",
+  measurementId: "G-JHCP67QKY0"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+  // Submit Order
+  const formt = document.querySelector("form");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const food = document.getElementById("food").value;
+
+    await db.collection("orders").add({
+      name,
+      address,
+      food,
+      timestamp: new Date()
+    });
+
+    alert("Order placed!");
+    form.reset();
+  });
+</script>
+
+
+
